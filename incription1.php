@@ -12,6 +12,9 @@ $sql = "INSERT INTO utilisateur (nom, identifiant, motdepasse) VALUES ('$nom', '
 
 if ($conn->query($sql) === TRUE) {
     echo "Inscription réussie. Vous pouvez maintenant vous connecter.";
+    // Redirection vers la page d'accueil ou autre après connexion réussie
+    header("Location: utilisateur.html");
+    exit;
 } else {
     echo "Erreur lors de l'inscription : " . $conn->error;
 }
