@@ -6,18 +6,18 @@
     <title>Connexion</title>
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script>
-        function afficherInscription() {
-            window.location.href = "inscription.html"; // Redirection vers la page d'inscription
-        }
-    </script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="navigation.js"></script>
 </head>
 <body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Barre de navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Waze Queyras</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -29,7 +29,7 @@
           <a class="nav-link" href="#">À propos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="utilisateur.html">Connection</a>
+          <a class="nav-link" href="utilisateur.html">Connexion</a>
         </li>
       </ul>
     </div>
@@ -46,13 +46,17 @@
                 <label for="motdepasseConnexion">Mot de passe :</label>
                 <input type="password" class="form-control" id="motdepasseConnexion" name="motdepasseConnexion" required>
             </div>
-            <button type="submit" class="btn btn-primary">Se connecter</button>
-            <button type="button" class="btn btn-link" onclick="afficherInscription()">S'inscrire</button>
+            <button type="submit" class="btn btn-primary custom-btn" onclick="connecterUser()">Se connecter</button>
+            <button type="button" class="btn btn-primary custom-btn" onclick="afficherInscription()">S'inscrire</button>
         </form>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <div class="center">
+        <!-- Insérer un GIF -->
+        <img class="gif" src="img/telepherique.gif" alt="Description du GIF">
+    </div>
+    <div class="footer">
+        <p> Copyright&copy; 2024 Alicia & Capucine </p>
+      </div>
 </body>
 </html>
