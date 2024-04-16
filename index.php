@@ -32,12 +32,13 @@
         <?php
         session_start();
         if (isset($_SESSION['identifiant'])) {
-            $username = $_SESSION['identifiant']['nom']; // Vous devez remplacer 'nom' par le champ approprié de votre table utilisateur
+            $username = $_SESSION['identifiant']['nom']; // Remplacez 'nom' par le champ approprié de votre table utilisateur
             echo '<span class="navbar-text">Connecté en tant que ' . $username . '</span>';
         }
         ?>
     </div>
 </nav>
+
 
 <!-- Contenu de la page d'accueil -->
 <div class="container mt-5">
@@ -50,5 +51,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<div class="footer">
+  <p> Copyright&copy; 2024 Alicia & Capucine </p>
+</div>
 </body>
 </html>
