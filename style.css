@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(52, 48, 48);
+    color: white; /* Définit la couleur de fond de la page entière en noir */
+}  
+
+/* Styles pour le carrousel */
+.carousel-item img {
+    max-height: 400px; /* Définit la hauteur maximale des images dans le carrousel */
+    width: auto; /* Ajuste automatiquement la largeur en fonction de la*/
+}  
+
+.table th,.table td{
+    color: white; /* Définit la couleur du texte pour le conteneur avec la classe mt-5 */
+}
