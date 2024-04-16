@@ -12,3 +12,18 @@ body {
 .table th,.table td{
     color: white; /* Définit la couleur du texte pour le conteneur avec la classe mt-5 */
 }
+
+
+h2 {
+    color: #007bff;
+}
+
+.form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
