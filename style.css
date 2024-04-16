@@ -18,6 +18,11 @@ h2 {
     color: #007bff;
 }
 
+.custom-btn{
+    background-color : rgb(230, 157, 123);
+    color : black;
+}
+
 .form {
     max-width: 400px;
     margin: 0 auto;
@@ -27,3 +32,17 @@ h2 {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Pour centrer verticalement */
+}
+/* Style pour ajuster la taille de l'image */
+.gif {
+    max-width: 100%; /* Pour s'assurer que l'image ne dépasse pas la largeur de son conteneur */
+    max-height: 100%; /* Pour s'assurer que l'image ne dépasse pas la hauteur de son conteneur */
+}
+.footer{
+    text-align: center;
+}
