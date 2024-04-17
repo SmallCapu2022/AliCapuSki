@@ -1,3 +1,13 @@
+<?php
+// start the session
+session_start();
+// Check if the user is not logged in, then redirect the user to login page
+if (!isset($_SESSION["identifiant"]) || $_SESSION["identifiant"] == false) {
+ header("location: utilisateur.html");
+ exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -27,16 +37,19 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">À propos</a>
             </li>
+            <li class="nav-item">
+            <a href="logout.php" class="btn btn-secondary custom-btn btn-lg active" role="button" aria-pressed="true">Log Out</a>
+    
+            </li>
         </ul>
         <!-- Afficher le nom de l'utilisateur si connecté -->
         <?php
-        session_start();
         if (isset($_SESSION['identifiant'])) {
             $username = $_SESSION['identifiant']['nom']; // Remplacez 'nom' par le champ approprié de votre table utilisateur
             echo '<span class="navbar-text">Connecté en tant que ' . $username . '</span>';
         }
         ?>
-    </div>
+        </div>
 </nav>
 
 
@@ -51,6 +64,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="navigation.js"></script>
 <div class="footer">
   <p> Copyright&copy; 2024 Alicia & Capucine </p>
 </div>
