@@ -5,9 +5,15 @@ body {
 
 /* Styles pour le carrousel */
 .carousel-item img {
-    max-height: 400px; /* Définit la hauteur maximale des images dans le carrousel */
-    width: auto; /* Ajuste automatiquement la largeur en fonction de la*/
-}  
+    height: auto; /* ou une valeur spécifique en pixels */
+}
+
+.carousel {
+    max-width: 800px
+    max-width: 2000px; /* Définir une largeur maximale pour le carrousel */
+    margin: auto; /* Centrer le carrousel horizontalement */
+}
+
 
 .table th,.table td{
     color: white; /* Définit la couleur du texte pour le conteneur avec la classe mt-5 */
