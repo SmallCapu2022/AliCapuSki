@@ -1,16 +1,35 @@
 <?php
-include 'connexion.php';
+session_start();
 
-$piste_id = $_POST['piste'];
+// Vérifier si le formulaire a été soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Inclure le fichier de connexion à la base de données
+    include_once "connexion.php";
 
-// Exemple : mettre à jour l'état de la piste sélectionnée
-$sql = "UPDATE piste SET etat = 'fermé' WHERE ppiste = $piste_id";
+    // Récupérer la piste et le nouvel état envoyés depuis le formulaire
+    $piste = $_POST['piste'];
+    $nouvelEtat = $_POST['nouvelEtat']; // Ajoutez un champ "nouvelEtat" dans votre formulaire pour récupérer le nouvel état
 
-if ($conn->query($sql) === TRUE) {
-    echo "État de la piste mis à jour avec succès.";
+    // Si le nouvel état est "fermé", mettre à jour sa valeur dans la base de données
+    if ($nouvelEtat == "fermé") {
+        $nouvelEtat = "fermé"; // Modifier l'état si nécessaire
+    }
+
+    // Préparer la requête SQL pour mettre à jour l'état de la piste dans la base de données
+    $sql = "UPDATE piste SET etat='$nouvelEtat' WHERE nom='$piste'";
+
+    // Exécuter la requête SQL
+    if ($conn->query($sql) === TRUE) {
+        // Rediriger l'utilisateur vers la page d'accueil
+        header("location: index.php");
+    } else {
+        echo "Erreur lors de la mise à jour de l'état de la piste : " . $conn->error;
+    }
+
+    // Fermer la connexion à la base de données
+    $conn->close();
 } else {
-    echo "Erreur lors de la mise à jour de l'état de la piste : " . $conn->error;
+    // Si le formulaire n'a pas été soumis via la méthode POST, rediriger vers la page d'accueil
+    header("location: index.php");
 }
-
-$conn->close();
 ?>
