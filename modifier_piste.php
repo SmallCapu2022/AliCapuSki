@@ -14,14 +14,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($nouvelEtat == "fermé") {
         $nouvelEtat = "fermé"; // Modifier l'état si nécessaire
     }
-
     // Préparer la requête SQL pour mettre à jour l'état de la piste dans la base de données
     $sql = "UPDATE piste SET etat='$nouvelEtat' WHERE nom='$piste'";
+    
 
     // Exécuter la requête SQL
     if ($conn->query($sql) === TRUE) {
         // Rediriger l'utilisateur vers la page d'accueil
-        header("location: index.php");
+        header("location: accueil.php");
     } else {
         echo "Erreur lors de la mise à jour de l'état de la piste : " . $conn->error;
     }
@@ -30,6 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 } else {
     // Si le formulaire n'a pas été soumis via la méthode POST, rediriger vers la page d'accueil
-    header("location: index.php");
+    header("location: accueil.php");
 }
 ?>
